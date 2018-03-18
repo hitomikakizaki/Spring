@@ -1,14 +1,13 @@
 package jp.co.kaki.Controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-@RestController
+@Controller
 public class HelloController {
-	@RequestMapping("/home")
-	@ResponseBody
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home() {
-		return "Hello Spring Boot!";
+		return "startSpring";
 	}
 }
