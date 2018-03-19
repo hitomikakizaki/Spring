@@ -1,5 +1,7 @@
+<%@page pageEncoding="UTF-8" isELIgnored="false" session="true"%>
+
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -12,31 +14,11 @@
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 
-<title>Hello, world!</title>
+<title>result</title>
 </head>
 <body>
 	<div class="container">
-		<form action="result" name="startSpringForm" id="startSpringForm" method="POST">
-			<div class="table-responsive">
-				<table class="table table-borderd">
-					<tbody>
-						<tr>
-							<td><label for="name">name</label></td>
-							<td><input type="text" name="name" id="name"></td>
-						</tr>
-						<tr>
-							<td><label for="phone">phone</label></td>
-							<td><input type="text" name="phone" id="phone"></td>
-						</tr>
-						<tr>
-						<td colspan="2" class="text-center"><button type="submit" class="btn btn-primary">Submit</button></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</form>
-
-
+		<h5>登録しました。</h5>
 	</div>
 
 	<!-- Optional JavaScript -->
