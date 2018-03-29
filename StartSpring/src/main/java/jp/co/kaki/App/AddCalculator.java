@@ -1,14 +1,17 @@
 /**
  * 
  */
-package jp.co.kaki.AddCalculator;
+package jp.co.kaki.App;
 
-import jp.co.kaki.Calculator.Calculator;
+import org.springframework.stereotype.Component;
+
+import jp.co.kaki.Interface.Calculator;
 
 /**
  * @author 216412
  *
  */
+@Component
 public class AddCalculator implements Calculator {
 	@Override
 	public int calc(int a, int b) {

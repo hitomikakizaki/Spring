@@ -3,34 +3,37 @@
  */
 package jp.co.kaki;
 
-import java.util.Scanner;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Import;
 
-import jp.co.kaki.Calculator.Calculator;
+import jp.co.kaki.App.Argument;
+import jp.co.kaki.Interface.ArgumentResolver;
+import jp.co.kaki.Interface.Calculator;
 
 /**
  * @author 216412
  *
  */
-@EnableAutoConfiguration
-@Import(AppConfig.class)
-public class BootDiApp {
+@SpringBootApplication
+public class BootDiApp implements CommandLineRunner{
+	
+	@Autowired
+	ArgumentResolver argumentResolver;
+	@Autowired
+	Calculator calculator;
 
+	@Override
+	public void run(String...strings) throws Exception {
+		System.out.print("Enter 2 numbers like '10 20' : ");
+		Argument argument = argumentResolver.resolve(System.in);
+		int result = calculator.calc(argument.getA(), argument.getB());
+		System.out.println("result=" + result);
+	}
+	
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(BootDiApp.class, args);
-
-		Scanner scanner = new Scanner(System.in);
-		System.out.print("Enter 2 numbers like 'a b' : ");
-		int a = scanner.nextInt();
-		int b = scanner.nextInt();
-
-		Calculator calculator = context.getBean(Calculator.class);
-		int result = calculator.calc(a, b);
-
-		System.out.println(result);
 	}
 }

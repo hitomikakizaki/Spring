@@ -1,7 +1,7 @@
 /**
  * 
  */
-package jp.co.kaki.Calculator;
+package jp.co.kaki.Interface;
 
 /**
  * @author 216412
