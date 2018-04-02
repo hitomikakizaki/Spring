@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 
 import jp.co.kaki.App.Argument;
 import jp.co.kaki.Interface.ArgumentResolver;
@@ -34,6 +33,6 @@ public class BootDiApp implements CommandLineRunner{
 	}
 	
 	public static void main(String[] args) {
-		ApplicationContext context = SpringApplication.run(BootDiApp.class, args);
+		SpringApplication.run(BootDiApp.class, args);
 	}
 }
